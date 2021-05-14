@@ -50,6 +50,7 @@ function Home() {
   if (locations?.length >= 30) {
     AaqualocationManager?.stopObserving();
   }
+
   // Init a no location object to display when locations state is null
   const noLocationRegisterd = {
     adresse: 'No Registered Locations ',

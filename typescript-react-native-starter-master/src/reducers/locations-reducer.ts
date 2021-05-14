@@ -7,8 +7,8 @@ import {
 import {Location} from 'src/types';
 import {createReducer} from 'typesafe-actions';
 import {LocationAction} from 'src/actions/actionTypes';
-import {deleteLocation} from '../utils/delete-location';
-
+import {deleteLocation} from '../utils/locations/delete-location';
+import {addLocation} from '../utils/locations/add-location';
 import cuid from 'cuid';
 
 export interface LocationState {
@@ -20,17 +20,7 @@ const initialState: LocationState = {
 };
 
 const locationReducer = createReducer<LocationState, LocationAction>(initialState)
-  .handleAction(fetchLocationAsync.success, (state, action) => ({
-    ...state,
-    locations: [
-      {
-        ...action?.payload,
-        id: cuid(),
-        date: String(new Date()),
-      },
-      ...state?.locations,
-    ],
-  }))
+  .handleAction(fetchLocationAsync.success, (state, action) => addLocation(state, action))
   .handleAction(deleteAllLocationsAction, (state, action) => ({
     ...state?.locations,
     locations: action?.payload,
