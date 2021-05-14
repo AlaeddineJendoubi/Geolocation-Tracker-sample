@@ -1,6 +1,8 @@
+import APIkey from '../constants/api-key';
+import {first} from 'lodash-fp';
 export const getReverseGeocoding = async (coordinates: Coordinates) => {
   try {
-    const url = `https://api.opencagedata.com/geocode/v1/json?q=${coordinates?.latitude}+${coordinates?.longitude}&key=d2cb40387ab9405faa7d05abf318e307`;
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${coordinates?.latitude}+${coordinates?.longitude}&key=${APIkey}`;
     const res = await fetch(url);
     const data = await res.json();
     const {formatted} = first(data?.results);
