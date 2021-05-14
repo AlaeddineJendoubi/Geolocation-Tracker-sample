@@ -7,9 +7,7 @@ import {
 import {Location} from 'src/types';
 import {createReducer} from 'typesafe-actions';
 import {LocationAction} from 'src/actions/actionTypes';
-import {deleteLocation} from '../utils/locations/delete-location';
-import {addLocation} from '../utils/locations/add-location';
-import cuid from 'cuid';
+import {deleteLocation, addLocation} from '../utils/locations';
 
 export interface LocationState {
   locations?: Location[];
