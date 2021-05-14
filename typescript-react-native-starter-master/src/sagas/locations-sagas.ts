@@ -1,5 +1,5 @@
 import {call, delay, put, race, take, takeLatest} from 'redux-saga/effects';
-import {fetchLocationAsync} from 'src/actions/location-actions';
+import {fetchLocationAsync} from 'src/actions/locations-actions';
 import {getReverseGeocoding} from 'src/lib/get-reverse-geocoding';
 
 export function* fetchReversedGeocodingSaga(action: ReturnType<typeof fetchLocationAsync.request>) {
