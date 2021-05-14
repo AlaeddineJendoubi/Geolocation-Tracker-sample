@@ -7,11 +7,7 @@ export const fetchLocationAsync = createAsyncAction(
   ['LOCATION_ERROR', (err: Error) => err],
   'LOCATION_FETCH_CANCEL',
 )();
-export const deleteAllLocationsAsync = createAction('LOCATION_DELETE_ALL', () => [])();
-export const delLocation = createAction(
-  'LOCATION_DEL',
-  (locationId: string, location?: Location) => ({
-    locationId,
-    location,
-  }),
-)();
+export const deleteAllLocationsAction = createAction('LOCATION_DELETE_ALL', () => [])();
+export const deleteLocationAction = createAction('LOCATION_DEL', (locationId: string) => ({
+  locationId,
+}))();
