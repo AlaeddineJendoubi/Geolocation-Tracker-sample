@@ -4,11 +4,13 @@ import {useTranslation} from 'react-i18next';
 import RNBootSplash from 'react-native-bootsplash';
 import Icon from 'react-native-easy-icon';
 import Home from 'src/containers/Home';
+import Map from 'src/containers/Map';
 import Settings from 'src/containers/Settings';
 import {sleep} from './utils/async';
 
 export type AppTabParamList = {
   Home: undefined;
+  Map: undefined;
   Settings: {userID?: string};
 };
 
@@ -37,6 +39,21 @@ const App = () => {
           tabBarIcon: ({focused, color, size}) => (
             <Icon
               name={focused ? 'home' : 'home-outline'}
+              type="material-community"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="map"
+        component={Map}
+        options={{
+          tabBarLabel: 'map',
+          tabBarIcon: ({focused, color, size}) => (
+            <Icon
+              name={focused ? 'map' : 'map-outline'}
               type="material-community"
               size={size}
               color={color}
