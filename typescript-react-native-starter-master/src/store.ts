@@ -1,6 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import appReducer, {AppReducerState} from 'src/reducers/appReducer';
 import usersReducer, {UsersState} from 'src/reducers/usersReducer';
+import locationReducer, {LocationState} from 'src/reducers/locations-reducer';
+
 import sagas from 'src/sagas/';
 import {
   applyMiddleware,
@@ -31,9 +33,15 @@ const usersPersistConfig: PersistConfig<UsersState, unknown, unknown, unknown> =
   key: 'users',
 };
 
+const locationsPersistConfig: PersistConfig<LocationState, unknown, unknown, unknown> = {
+  storage: AsyncStorage,
+  key: 'locations',
+};
+
 export const reducers = {
   app: persistReducer(appPersistConfig, appReducer),
   users: persistReducer(usersPersistConfig, usersReducer),
+  locations: persistReducer(locationsPersistConfig, locationReducer),
 };
 
 export const rootReducer = combineReducers(reducers);
