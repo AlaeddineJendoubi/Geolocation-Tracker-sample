@@ -13,7 +13,7 @@ export interface Coordinates {
 }
 export interface Location {
   id: string;
-  address: string;
+  adresse: string;
   date: string;
   coordinates: Coordinates;
 }

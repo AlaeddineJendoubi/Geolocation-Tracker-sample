@@ -50,10 +50,9 @@ function Home() {
   if (locations?.length >= 30) {
     AaqualocationManager?.stopObserving();
   }
-
   // Init a no location object to display when locations state is null
   const noLocationRegisterd = {
-    address: 'No Registered Locations ',
+    adresse: 'No Registered Locations ',
     id: 'null',
     coordinates: {longitude: 0, latitude: 0},
     date: 'Please make sure that internet/location ervices are on',
@@ -73,9 +72,9 @@ function Home() {
         </View>
         <View style={styles?.currentLocationSubcontainer}>
           <Text appearance="default" category="h6" style={styles?.adresse}>
-            {isNil(first(locations)?.address)
-              ? noLocationRegisterd?.address
-              : first(locations)?.address}
+            {isNil(first(locations)?.adresse)
+              ? noLocationRegisterd?.adresse
+              : first(locations)?.adresse}
           </Text>
           <Text style={styles?.date} appearance="hint">
             {isNil(first(locations)?.date) ? noLocationRegisterd?.date : first(locations)?.date}
