@@ -1,5 +1,5 @@
 'use strict';
-import {fetchLocationAsync} from 'src/actions/location-actions';
+import {fetchLocationAsync} from 'src/actions/locations-actions';
 import {Location} from 'src/types';
 import {createReducer} from 'typesafe-actions';
 import {LocationAction} from 'src/actions/actionTypes';
