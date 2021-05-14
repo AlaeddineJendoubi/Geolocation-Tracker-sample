@@ -3,10 +3,13 @@ import {StyleSheet, View} from 'react-native';
 import Colors from 'src/constants/colors';
 import MapView from 'react-native-maps';
 import useSelector from 'src/utils/useSelector';
+import {Markers} from '../components/mapView-markers';
+
 import {first} from 'lodash/fp';
 
 function Map() {
   const {locations} = useSelector((state) => state?.locations);
+  const RenderMarkers = Markers(locations);
 
   return (
     <View style={styles?.container}>
@@ -19,6 +22,7 @@ function Map() {
           longitudeDelta: 0.0421,
         }}
       />
+      {RenderMarkers}
     </View>
   );
 }
