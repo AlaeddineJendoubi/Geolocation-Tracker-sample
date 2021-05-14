@@ -24,7 +24,9 @@ function Home() {
    * @returns {LocationState} a location state updated with new location
    */
   const fetchLocation = (coordinates: Coordinates) => {
-    dispatch(fetchLocationAsync.request(coordinates));
+    if (locations?.length >= 30) {
+      dispatch(fetchLocationAsync.request(coordinates));
+    }
   };
 
   /**
