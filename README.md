@@ -1,6 +1,6 @@
 # Geolocation Tracker sample application
 
-A mini user location tracker
+A user location tracker
 - **React-native**
   - [TypeScript]
   - [Functional components]
