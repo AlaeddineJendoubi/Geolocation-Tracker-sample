@@ -1,8 +1,8 @@
-# AaquaTest
+# Geolocation-Tracker-sample
  
 installation instructions : 
 
-Make sure to install all required packages by using "npm install" command
+Make sure to install all required packages by using "npm install" command.
 Make sure to install all required pods by using "cd ios/" && "pod install" commands
 
 run the metro bundler using "npm run start ", and then from xcode run the project 
